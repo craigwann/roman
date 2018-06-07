@@ -12,14 +12,14 @@ A website created with JavaScript and HTML where a user can submit a number and 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **simple numbers (ones)** | input: 1 | I |
-| **special numbers (ones)** | input: 5 | V |
-| **numbers before special numbers (ones)**| Input: 4 | IV |
-| **2 digit numbers (tens)**| Input: 11 | XI |
-| **3 digit numbers (hundreds)** | Input: 111 | Output: LXI |
-| **4 digit numbers (thousands)**| Input: 1111 | Output: MLXI |
-| **outside number range (over 3,999 or under 0)**| Input: 4000 | Output: That is not a valid number |
-| **strings that are not numbers**| Input: afw | Output: That is not a number |
+| **simple numbers (ones)** | 1 | I |
+| **special numbers (ones)** | 5 | V |
+| **numbers before special numbers (ones)**| 4 | IV |
+| **2 digit numbers (tens)**| 11 | XI |
+| **3 digit numbers (hundreds)** | 111 | LXI |
+| **4 digit numbers (thousands)**| 1111 | MLXI |
+| **outside number range (over 3,999 or under 0)**| 4000 | That is not a valid number |
+| **strings that are not numbers**| afw | That is not a number |
 
 
 ## Setup/Installation Requirements

@@ -16,7 +16,7 @@ $(document).ready(function() {
     if (isNaN(input)) {
       array.push("That is not a number")
     }
-    else if (input > 3999 && input < 0) {
+    if (input > 3999 || input < 1) {
       array.push("That is not a valid number")
     }
     else if (inputString.split("").length === 4) {
@@ -38,7 +38,8 @@ $(document).ready(function() {
         hundreds -= 5;
       } else if (hundreds === 4){
         array.push(romanize(1, 2, 1));
-      } if (hundreds > 0 && hundreds < 4) {
+      }
+      if (hundreds > 0 && hundreds < 4) {
         array.push(romanize(0, 2, hundreds));
       }
       inputString = inputString.split("").splice(1).join("");
@@ -54,7 +55,8 @@ $(document).ready(function() {
         tens -= 5;
       } else if (tens === 4){
         array.push(romanize(1, 1, 1));
-      } if (tens > 0 && tens < 4) {
+      }
+      if (tens > 0 && tens < 4) {
         array.push(romanize(0, 1, tens));
       }
       inputString = inputString.split("").splice(1).join("");
@@ -68,7 +70,8 @@ $(document).ready(function() {
         input -= 5;
       } else if (input === 4){
         array.push(romanize(1, 0, 1));
-      } if (input > 0 && input < 4) {
+      }
+      if (input > 0 && input < 4) {
         array.push(romanize(0, 0, input));
       }
     }
