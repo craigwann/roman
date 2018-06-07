@@ -45,3 +45,4 @@ _Email no one with any questions, comments, or concerns._
 *{This software is licensed under the MIT license}*
 
 Copyright (c) 2017 **_{Kevin Ahn, Craig Wann}_**
+let's be honest...mostly Kevin
