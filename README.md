@@ -12,12 +12,15 @@ A website created with JavaScript and HTML where a user can submit a number and 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "pants" | Output: "pants" |
-| **Program Removes Spaces from User Input**| User Input: "pants pants" | Output: "pantspants" |
-| **Program Removes Punctuation from User Input**| Input: "p#an^t@s  /p(ant%s" | Output: "pantspants" |
-| **Program Assigns Characters Numeric Values** | Input: "pants" | Output: "3 1 1 1 1" |
-| **Program Sums Character Values**| Input: "3 1 1 1 1" | Page Displays: 7 |
+| **simple numbers (ones)** | input: 1 | I |
+| **special numbers (ones)** | input: 5 | V |
+| **numbers before special numbers (ones)**| Input: 4 | IV |
+| **2 digit numbers (tens)**| Input: 11 | XI |
+| **3 digit numbers (hundreds)** | Input: 111 | Output: LXI |
+| **4 digit numbers (thousands)**| Input: 1111 | Output: MLXI |
+| **outside number range (over 3,999)**| Input: 4000 | Output: That is not a valid number |
+| **strings that are not numbers**| Input: af45w | Output: That is not a number |
+
 
 ## Setup/Installation Requirements
 

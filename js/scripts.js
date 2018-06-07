@@ -5,26 +5,23 @@ function oneToThree(placeholder) {
   return answer;
 };
 
-function four(placeholder) {
+function four() {
   var four = "IV";
   var answer = four;
   return answer;
 }
 
-function five(placeholder) {
+function five() {
   var five = "V";
   var answer = five;
   return answer;
 }
 
-function nine(placeholder) {
+function nine() {
   var nine = "IX";
   var answer = nine;
   return answer;
 }
-
-
-
 
 
 function tenToThirty(placeholder) {
@@ -33,19 +30,19 @@ function tenToThirty(placeholder) {
   return answer;
 };
 
-function forty(placeholder) {
+function forty() {
   var four = "XL";
   var answer = four;
   return answer;
 }
 
-function fifty(placeholder) {
+function fifty() {
   var five = "L";
   var answer = five;
   return answer;
 }
 
-function ninety(placeholder) {
+function ninety() {
   var nine = "XC";
   var answer = nine;
   return answer;
@@ -60,19 +57,19 @@ function hundred(placeholder) {
   return answer;
 };
 
-function fourHundred(placeholder) {
+function fourHundred() {
   var four = "CD";
   var answer = four;
   return answer;
 }
 
-function fiveHundred(placeholder) {
+function fiveHundred() {
   var five = "D";
   var answer = five;
   return answer;
 }
 
-function nineHundred(placeholder) {
+function nineHundred() {
   var nine = "CM";
   var answer = nine;
   return answer;
@@ -96,7 +93,7 @@ $(document).ready(function() {
 
     if (isNaN(input)) {
       array.push("That is not a number")
-    }
+    };
 
     if (input > 3999) {
       array.push("That is not a valid number")
@@ -119,19 +116,13 @@ $(document).ready(function() {
       var hundredsString = inputString.split("")[0];
       var hundreds = parseInt(hundredsString);
       if (hundreds === 9){
-        array.push(nineHundred(input));
-      }
-      else if (hundreds > 5 && hundreds < 9) {
-        array.push(fiveHundred(hundreds));
+        array.push(nineHundred());
+      } else if (hundreds > 4 && hundreds < 9) {
+        array.push(fiveHundred());
         hundreds -= 5;
-      }
-      else if (hundreds === 5) {
-        array.push(fiveHundred(hundreds));
-      }
-      else if (hundreds === 4){
-        array.push(fourHundred(hundreds));
-      }
-      if (hundreds > 0 && hundreds < 4) {
+      } else if (hundreds === 4){
+        array.push(fourHundred());
+      } if (hundreds > 0 && hundreds < 4) {
         array.push(hundred(hundreds));
       }
 
@@ -144,19 +135,13 @@ $(document).ready(function() {
       var tensString = inputString.split("")[0];
       var tens = parseInt(tensString);
       if (tens === 9){
-        array.push(ninety(input));
-      }
-      else if (tens > 5 && tens < 9) {
-        array.push(fifty(tens));
+        array.push(ninety());
+      } else if (tens > 4 && tens < 9) {
+        array.push(fifty());
         tens -= 5;
-      }
-      else if (tens === 5) {
-        array.push(fifty(tens));
-      }
-      else if (tens === 4){
-        array.push(forty(tens));
-      }
-      if (tens > 0 && tens < 4) {
+      } else if (tens === 4){
+        array.push(forty());
+      } if (tens > 0 && tens < 4) {
         array.push(tenToThirty(tens));
 
       }
@@ -168,19 +153,13 @@ $(document).ready(function() {
 
     if (inputString.split("").length === 1) {
       if (input === 9){
-        array.push(nine(input));
-      }
-      else if (input > 5 && input < 9) {
-        array.push(five(input));
+        array.push(nine());
+      } else if (input > 4 && input < 9) {
+        array.push(five());
         input -= 5;
-      }
-      else if (input === 5) {
-        array.push(five(input));
-      }
-      else if (input === 4){
-        array.push(four(input));
-      }
-      if (input > 0 && input < 4) {
+      } else if (input === 4){
+        array.push(four());
+      } if (input > 0 && input < 4) {
         array.push(oneToThree(input));
       }
     }
