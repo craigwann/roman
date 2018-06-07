@@ -1,87 +1,10 @@
 //Business logic
-function oneToThree(placeholder) {
-  var one = "I"
+function oneToThree(first, second, placeholder) {
+  var theArray = [["I", "X", "C", "M"], ["IV", "XL", "CD"], ["V", "L", "D"], ["IX", "XC", "CM"]];
+  var one = theArray[first][second]
   var answer = one.repeat(placeholder);
   return answer;
 };
-
-function four() {
-  var four = "IV";
-  var answer = four;
-  return answer;
-}
-
-function five() {
-  var five = "V";
-  var answer = five;
-  return answer;
-}
-
-function nine() {
-  var nine = "IX";
-  var answer = nine;
-  return answer;
-}
-
-
-function tenToThirty(placeholder) {
-  var one = "X"
-  var answer = one.repeat(placeholder);
-  return answer;
-};
-
-function forty() {
-  var four = "XL";
-  var answer = four;
-  return answer;
-}
-
-function fifty() {
-  var five = "L";
-  var answer = five;
-  return answer;
-}
-
-function ninety() {
-  var nine = "XC";
-  var answer = nine;
-  return answer;
-}
-
-
-
-
-function hundred(placeholder) {
-  var one = "C"
-  var answer = one.repeat(placeholder);
-  return answer;
-};
-
-function fourHundred() {
-  var four = "CD";
-  var answer = four;
-  return answer;
-}
-
-function fiveHundred() {
-  var five = "D";
-  var answer = five;
-  return answer;
-}
-
-function nineHundred() {
-  var nine = "CM";
-  var answer = nine;
-  return answer;
-}
-
-function thousand(placeholder) {
-  var one = "M"
-  var answer = one.repeat(placeholder);
-  return answer;
-}
-
-
 //User Interface logic
 $(document).ready(function() {
   $(".theForm").submit(function(event) {
@@ -89,7 +12,6 @@ $(document).ready(function() {
     var array = [];
     var inputString = $(".inputNumber").val()
     var input = parseInt($(".inputNumber").val());
-
 
     if (isNaN(input)) {
       array.push("That is not a number")
@@ -99,71 +21,62 @@ $(document).ready(function() {
       array.push("That is not a valid number")
     };
 
-
     if (inputString.split("").length === 4) {
       var thousandsString = inputString.split("")[0];
       var thousands = parseInt(thousandsString);
       if (thousands > 0 && thousands < 4) {
-        array.push(thousand(thousands));
+        array.push(oneToThree(0, 3, thousands));
       };
       inputString = inputString.split("").splice(1).join("");
       input = parseInt(inputString);
     };
 
-
-
     if (inputString.split("").length === 3) {
       var hundredsString = inputString.split("")[0];
       var hundreds = parseInt(hundredsString);
       if (hundreds === 9){
-        array.push(nineHundred());
+        array.push(oneToThree(3, 2, 1));
       } else if (hundreds > 4 && hundreds < 9) {
-        array.push(fiveHundred());
+        array.push(oneToThree(2, 2, 1));
         hundreds -= 5;
       } else if (hundreds === 4){
-        array.push(fourHundred());
+        array.push(oneToThree(1, 2, 1));
       } if (hundreds > 0 && hundreds < 4) {
-        array.push(hundred(hundreds));
+        array.push(oneToThree(0, 2, hundreds));
       }
-
       inputString = inputString.split("").splice(1).join("");
       input = parseInt(inputString);
-
     }
 
     if (inputString.split("").length === 2) {
       var tensString = inputString.split("")[0];
       var tens = parseInt(tensString);
       if (tens === 9){
-        array.push(ninety());
+        array.push(oneToThree(3, 1, 1));
       } else if (tens > 4 && tens < 9) {
-        array.push(fifty());
+        array.push(oneToThree(2, 1, 1));
         tens -= 5;
       } else if (tens === 4){
-        array.push(forty());
+        array.push(oneToThree(1, 1, 1));
       } if (tens > 0 && tens < 4) {
-        array.push(tenToThirty(tens));
-
+        array.push(oneToThree(0, 1, tens));
       }
-
       inputString = inputString.split("").splice(1).join("");
       input = parseInt(inputString);
-
     }
 
     if (inputString.split("").length === 1) {
       if (input === 9){
-        array.push(nine());
+        array.push(oneToThree(3, 0, 1));
       } else if (input > 4 && input < 9) {
-        array.push(five());
+        array.push(oneToThree(2, 0, 1));
         input -= 5;
       } else if (input === 4){
-        array.push(four());
+        array.push(oneToThree(1, 0, 1));
       } if (input > 0 && input < 4) {
-        array.push(oneToThree(input));
+        array.push(oneToThree(0, 0, input));
       }
     }
-
 
     $(".result").text(array.join(""));
   });
