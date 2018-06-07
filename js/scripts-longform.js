@@ -1,4 +1,5 @@
 //Business logic
+//----------------------------ONES
 function oneToThree(placeholder) {
   var one = "I"
   var answer = one.repeat(placeholder);
@@ -23,7 +24,7 @@ function nine() {
   return answer;
 }
 
-
+//----------------------------TENS
 function tenToThirty(placeholder) {
   var one = "X"
   var answer = one.repeat(placeholder);
@@ -50,7 +51,7 @@ function ninety() {
 
 
 
-
+//----------------------------HUNDREDS
 function hundred(placeholder) {
   var one = "C"
   var answer = one.repeat(placeholder);
@@ -75,6 +76,7 @@ function nineHundred() {
   return answer;
 }
 
+//----------------------------THOUSANDS
 function thousand(placeholder) {
   var one = "M"
   var answer = one.repeat(placeholder);
